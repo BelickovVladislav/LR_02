@@ -16,7 +16,7 @@ namespace ComponentDll
         private static int NextInstanceID = 0;
         private static long ClassInstanceCount = 0;
 
-        public Component1()
+        public Component1() : base()
         {
             InitializeComponent();
 
@@ -26,7 +26,7 @@ namespace ComponentDll
             ClassInstanceCount++;
         }
 
-        public Component1(IContainer container)
+        public Component1(IContainer container): base()
         {
             container.Add(this);
 

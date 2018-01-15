@@ -7,19 +7,22 @@ using System.IO;
 
 namespace FileSystem.FileSystem
 {
-    public class MyFileSystem: IDirectory, IFile, IVFS
+    public class MyFileSystem : IDirectory, IFile, IVFS
     {
         private DirectoryInfo directory;
         private StreamReader reader;
         private FileInfo file;
 
-        string IFile.openFile(string path)
+        public DelegateManager.logCallHardCodeMethod logCallHardCodeMethod;
+
+        public string openFile(string path)
         {
+            logCallHardCodeMethod.Invoke(path);
             reader = new StreamReader(path);
             return reader.ReadToEnd();
         }
 
-        string IVFSObject.getParentObject(string path)
+        public string getParentObject(string path)
         {
             directory = new DirectoryInfo(path);
             return directory.Parent.FullName;
@@ -52,23 +55,23 @@ namespace FileSystem.FileSystem
             return name + ": " + value + "\n"; ;
         }
 
-        string IVFS.getHomePath(string path)
+        public string getHomePath(string path)
         {
             directory = new DirectoryInfo(@"C:/");
             return directory.FullName;
         }
 
-        string IVFS.getDriverName(string path)
+        public string getDriverName(string path)
         {
             return "инфа о драйверах файловой системы";
         }
 
-        string IVFS.getFileSystemName(string path)
+        public string getFileSystemName(string path)
         {
             return "MyFileSystem";
         }
 
-        string IVFS.getCodeFileName(string path)
+        public string getCodeFileName(string path)
         {
             file = new FileInfo(path);
             return "UTF-8";

@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileSystem\DelegateManager.cs" />
     <Compile Include="FileSystem\MyFileSystem.cs" />
     <Compile Include="Interface\IDirectory.cs" />
     <Compile Include="Interface\IFile.cs" />

@@ -83,6 +83,10 @@
       <Project>{1585d5a0-00f6-4576-aa67-ffec23de1ab5}</Project>
       <Name>ComponentDll</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FileSystem\FileSystem.csproj">
+      <Project>{bf58f649-1f66-4811-a312-fa52fddcdec8}</Project>
+      <Name>FileSystem</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
